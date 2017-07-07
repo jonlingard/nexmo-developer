@@ -74,6 +74,8 @@ gem 'bugsnag'
 # Extends String class or add a ColorizedString with methods to set text color, background color and text effects.
 gem 'colorize'
 
+gem 'open_api_parser'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
