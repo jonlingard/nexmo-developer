@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get '/community/past-events', to: 'static#past_events'
   get '/changelog', to: 'static#changelog'
 
-
   match '/search', to: 'search#results', via: [:get, :post]
   match '/quicksearch', to: 'search#quicksearch', via: [:get, :post]
 
