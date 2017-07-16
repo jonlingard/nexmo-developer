@@ -13,8 +13,8 @@ import GithubCards from './GithubCards';
 import TabbedExamples from './TabbedExamples';
 import JsSequenceDiagrams from './JsSequenceDiagrams';
 import Navigation from './Navigation';
-import Search from './Search';
 import Scroll from './Scroll';
+import Search from './Search';
 import Notices from './Notices';
 
 import {
@@ -24,7 +24,6 @@ import {
 
 Collapsible()
 Navigation()
-Search()
 Scroll()
 turbolinksPreventSamePage()
 turbolinksAnimate()
@@ -36,6 +35,10 @@ let refresh = () => {
   JsSequenceDiagrams()
   $(document).foundation();
   new TabbedExamples
+
+  if (document.getElementById('SearchComponent')) {
+    ReactDOM.render(<Search/>, document.getElementById('SearchComponent'))
+  }
 
   if(window.location.hash) {
     const anchor = document.querySelector(window.location.hash);

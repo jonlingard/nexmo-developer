@@ -30,7 +30,7 @@ class TutorialsController < ApplicationController
 
     @tutorials.compact!
 
-    @title = 'Tutorials'
+    @document_title = 'Tutorials'
 
     render layout: 'page'
   end
@@ -43,9 +43,9 @@ class TutorialsController < ApplicationController
 
     # Parse frontmatter
     @frontmatter = YAML.safe_load(document)
-    @title = @frontmatter['title']
+    @document_title = @frontmatter['title']
 
-    @content = MarkdownPipeline.new.call(document)
+    @content = MarkdownPipeline.new({ code_language: @code_language }).call(document)
 
     render layout: 'static'
   end
